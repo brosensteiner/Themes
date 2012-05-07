@@ -1,0 +1,90 @@
+/*
+	@theme CappuccinoMod
+	@override-placeholders ruby, css, html, php
+  	@author Bernhard Rosensteiner - adapted for Expresso 2 with Regex.sugar support. Based on Anthony Short´s Cappuccino theme, which is based on the Railcasts theme
+*/
+
+:document-base {
+	color: #999;
+	background-color: #222;
+	insertion-point-color: #fff;
+	selection-background-color: rgba(200, 121, 54, 0.3);
+	current-line-background-color: rgba(251,233,173,0.1);
+}
+
+tag, 
+source,
+language-root,
+sourcecode,
+css {
+	spell-check: disabled;
+}
+
+/* operators, regex */
+keyword.operator,
+regex quantifier,
+regex negated,
+regex identifier.any {
+	color: #ebb5b5;
+}
+regex begin,
+regex end,
+regex operator {
+	color: #ffffff;
+	font-weight: bold;
+}
+regex container begin,
+regex container end,
+language-root open-bracket,
+language-root close-bracket {
+	color: rgba(251, 90, 90, 1.00);
+}
+
+processing-instruction { color:#aeaeae; }
+
+/* Yellow */
+selector,
+php builtin_function name
+{ color: rgba(251, 199, 111, 1.00); }
+
+/* Blue */
+property-name,
+tag,
+variable
+{ color: rgba(112, 155, 190, 1.00); }
+
+/* Green */
+property-value
+{ color: rgba(164, 194, 97, 1.00); }
+
+/* Red */
+php php.begin *,
+php keyword.modifier
+{ color: rgba(251, 90, 90, 1.00); }
+
+/* Orange */
+keyword.important,
+storage.type,
+control {
+	color: rgba(200, 121, 54, 1.00);
+	font-weight: bold;
+}
+
+/* Grey */
+comment,
+tag.doctype
+{ color: #555; }
+
+/* Light Grey */
+balanced
+{ color: #999;}
+
+/* Off-white */
+string 
+{ color: rgba(164, 194, 97, 1.00); }
+
+constant.numeric,
+constant.language {
+	color: #ffffff;
+	background-color: #555;
+}
