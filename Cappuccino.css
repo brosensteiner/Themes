@@ -17,7 +17,7 @@ source,
 language-root,
 sourcecode,
 css {
-	spell-check: enabled;
+	spell-check: disabled;
 }
 
 /* operators, regex */
