@@ -20,12 +20,11 @@ css {
 	spell-check: disabled;
 }
 
-/* operators, regex */
 keyword.operator,
 regex quantifier,
 regex negated,
 regex identifier.any {
-	color: #ebb5b5;
+	color: #c87162;
 }
 regex begin,
 regex end,
@@ -35,56 +34,104 @@ regex operator {
 }
 regex container begin,
 regex container end,
-language-root open-bracket,
-language-root close-bracket {
+open-bracket,
+close-bracket {
 	color: rgba(251, 90, 90, 1.00);
 }
 
-processing-instruction { color:#aeaeae; }
+processing-instruction {
+	color:#aeaeae;
+}
 
-/* Yellow */
 selector,
-php builtin_function name
-{ color: rgba(251, 199, 111, 1.00); }
+php builtin_function name,
+function > name,
+css.embedded attribute-name,
+css.embedded punctuation.definition.tag {
+	color: rgba(251, 199, 111, 1.00);
+}
 
-/* Blue */
 property-name,
 tag,
-variable
-{ color: rgba(112, 155, 190, 1.00); }
+variable,
+variable>punctuation,
+attribute-name,
+punctuation.definition.tag {
+	color: rgba(112, 155, 190, 1.00);
+}
 
-/* Green */
-property-value
-{ color: rgba(164, 194, 97, 1.00); }
+tag>name,
+support.function,
+function-call,
+storage.type {
+	color: rgb(73, 134, 185);
+}
 
-/* Red */
+property-value, vvariable {
+	color: rgba(164, 194, 97, 1.00);
+}
+
 php php.begin *,
-php keyword.modifier
-{ color: rgba(251, 90, 90, 1.00); }
+php keyword.modifier,
+tag > string.quoted,
+tag > attribute-with-value > string.quoted{
+	color: rgba(251, 90, 90, 1.00);
+}
 
-/* Orange */
 keyword.important,
 storage.type,
-control {
+control,
+character-class.escape {
 	color: rgba(200, 121, 54, 1.00);
 	font-weight: bold;
 }
 
-/* Grey */
 comment,
-tag.doctype
-{ color: #555; }
+comment>punctuation,
+tag.doctype,
+tag.doctype > *,
+tag.doctype > string.quoted {
+	color: #555;
+}
 
-/* Light Grey */
-balanced
-{ color: #999;}
+balanced {
+	color: #999;
+}
 
-/* Off-white */
-string 
-{ color: rgba(164, 194, 97, 1.00); }
+string.quoted-alt {
+	bluebackground-color: #f4f9fe;
+	color: #1aa1a1;
+	background-color: rgba(235,252,254,0.5);
+}
+string.quoted {
+	color: rgba(164, 194, 97, 1.00);
+}
+string.quoted > punctuation {
+	color: rgba(164, 194, 97, 0.8);
+}
+string.quoted > escape {
+	font-weight: bold;
+	color: rgba(164, 194, 97, 0.6);
+	background-color: rgba(251,233,173,0.2);
+}
 
-constant.numeric,
-constant.language {
+js.embedded {
+	color: #434343;
+}
+
+constant.numeric, constant.language {
 	color: #ffffff;
 	background-color: #555;
+}
+
+invalid {
+	background-color: #f93232;
+	color: #f9f2ce;
+}
+
+textile > header,
+tag.h1,
+tag.h1 *,
+tag > string > punctuation {
+	font-weight: bold;
 }
