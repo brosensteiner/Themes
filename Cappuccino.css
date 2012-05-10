@@ -24,7 +24,7 @@ keyword.operator,
 regex quantifier,
 regex negated,
 regex identifier.any {
-	color: #c87162;
+	color: #cd8376;
 }
 regex begin,
 regex end,
@@ -35,7 +35,11 @@ regex operator {
 regex container begin,
 regex container end,
 open-bracket,
-close-bracket {
+close-bracket,
+php php.begin *,
+php keyword.modifier,
+tag > string.quoted,
+tag > attribute-with-value > string.quoted {
 	color: rgba(251, 90, 90, 1.00);
 }
 
@@ -51,6 +55,7 @@ css.embedded punctuation.definition.tag {
 	color: rgba(251, 199, 111, 1.00);
 }
 
+characters,
 property-name,
 tag,
 variable,
@@ -69,13 +74,6 @@ storage.type {
 
 property-value, vvariable {
 	color: rgba(164, 194, 97, 1.00);
-}
-
-php php.begin *,
-php keyword.modifier,
-tag > string.quoted,
-tag > attribute-with-value > string.quoted{
-	color: rgba(251, 90, 90, 1.00);
 }
 
 keyword.important,
