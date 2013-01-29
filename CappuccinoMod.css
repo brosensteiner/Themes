@@ -26,6 +26,13 @@ control {
 	color: #e88313;
 	font-weight: bold;
 }
+keyword.unit {
+	color: #d33682;
+	font-weight: bold;
+}
+numeric {
+        color: #7653c1;
+}
 
 global {
 	color: #268bd2;
@@ -96,12 +103,33 @@ tcl.terminator {
 
 /* @group ConTeXt */
 
-balanced.bracket > support.function ~ context.punctuation.separator.comma,
-balanced.bracket + balanced.bracket > context.punctuation.separator.comma,
-balanced.bracket + balanced.bracket + balanced.bracket > context.punctuation.separator.comma,
-support.function + balanced.bracket > context.punctuation.separator.comma,
-context.key-name[text='location'] + keyword.operator.key + balanced > context.punctuation.separator.comma,
-context.key-name[text='align'] + keyword.operator.key + balanced > context.punctuation.separator.comma,
+context.support.variable.define {
+	color: #B10004;
+	font-weight: bold;
+}
+
+context.balanced.bracket > key-name {
+	color: #15A8F9;
+}
+
+
+context.structural.float {
+	background-color: #4f4f4f;
+}
+
+context.begin.math,
+context.end.math {
+	color: #800080;
+	font-weight: bold;
+}
+
+context.balanced.bracket > support.function ~ punctuation.separator.comma,
+context.balanced.bracket + balanced.bracket > punctuation.separator.comma,
+context.balanced.bracket + balanced.bracket + balanced.bracket > punctuation.separator.comma,
+context.support.function + balanced.bracket > punctuation.separator.comma,
+context.context.key-name[text='location'] + keyword.operator.assignment + brace > punctuation.separator.comma,
+context.context.key-name[text='align'] + keyword.operator.assignment + brace > punctuation.separator.comma,
+context.context.key-name[text='background'] + keyword.operator.assignment + brace > punctuation.separator.comma,
 keyword.operator,
 regex quantifier,
 regex negated,
