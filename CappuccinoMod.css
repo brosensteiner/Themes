@@ -30,6 +30,9 @@ keyword.unit {
 	color: #d33682;
 	font-weight: bold;
 }
+keyword.other {
+	color: #ebeb60;
+}
 numeric {
         color: #7653c1;
 }
@@ -102,13 +105,26 @@ tcl.terminator {
 /* @end */
 
 /* @group ConTeXt */
+openbracket.level0,
+closebracket.level0 {
+	color: #7a7a75;
+}
+
+context.support.function.general.counting + support.function.general + keyword-zone.by-keyword,
+context.support.function.general.rule + keyword-zone.depth-width-height-keyword,
+context.support.function.general.rule + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword,
+context.support.function.general.rule + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword,
+context.keyword-zone + plus-minus-keyword,
+context.support.function.general.box + keyword-zone.to-spread-keyword > to-spread-keyword {
+	color: #9DD748;
+}
 
 context.support.variable.define {
 	color: #B10004;
 	font-weight: bold;
 }
 
-context.balanced.bracket > key-name {
+context.between.brackets > key-name {
 	color: #15A8F9;
 }
 
@@ -123,10 +139,8 @@ context.end.math {
 	font-weight: bold;
 }
 
-context.balanced.bracket > support.function ~ punctuation.separator.comma,
-context.balanced.bracket + balanced.bracket > punctuation.separator.comma,
-context.balanced.bracket + balanced.bracket + balanced.bracket > punctuation.separator.comma,
-context.support.function + balanced.bracket > punctuation.separator.comma,
+context.between.brackets > punctuation.separator.comma,
+context.support.function + balanced.bracket > context.between.brackets > punctuation.separator.comma,
 context.context.key-name[text='location'] + keyword.operator.assignment + brace > punctuation.separator.comma,
 context.context.key-name[text='align'] + keyword.operator.assignment + brace > punctuation.separator.comma,
 context.context.key-name[text='background'] + keyword.operator.assignment + brace > punctuation.separator.comma,
