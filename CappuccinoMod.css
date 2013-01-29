@@ -1,18 +1,20 @@
 /*
 	@theme CappuccinoMod
 	@override-placeholders ruby, css, html, php
-  	@author Bernhard Rosensteiner - adapted for Expresso 2 with Regex.sugar support. Based on Anthony Short´s Cappuccino theme, which is based on the Railcasts theme
+  	@author Bernhard Rosensteiner
 */
 
 :document-base {
 	color: #999;
 	background-color: rgba(25, 25, 25, 0.95);
 	insertion-point-color: #fff;
-	selection-background-color: rgba(127, 89, 48, 0.5);
-	current-line-background-color: rgba(127, 89, 48, 0.4);
+	selection-background-color: rgba(200, 89, 48, 0.3);
+	current-line-background-color: rgba(100, 100, 100, 0.4);
 }
-punctuation.namespace,
-punctuation.go-on,
+
+shebang {
+	color: #ec1919;
+}
 punctuation.terminator,
 regex begin,
 regex end,
@@ -20,19 +22,98 @@ regex operator {
 	color: #ffffff;
 	font-weight: bold;
 }
+control {
+	color: #e88313;
+	font-weight: bold;
+}
+
+global {
+	color: #268bd2;
+	font-weight: bold;
+}
+open-brace, close-brace,
+open-parenthesis, close-parenthesis {
+	color: #ffffff;
+	font-weight: bold;
+}
+open-bracket,
+close-bracket {
+	color: #f35519;
+	font-weight: bold;
+}
+/* @group Lua */
+lua.keyword.local {
+	color: #268bd2;
+}
+lua.metamethod {
+	color: #d44950;
+}
+lua.keyword.additional.magic-character {
+	color: #86bcff;
+	font-weight: bold;
+}
+
+/* @end */
+/* @group Tcl */
+tcl.container.evaluate-array > evaluate,
+tcl.variable.punctuation {
+	color: #8BA57A;
+}
+
+tcl.argument-expansion,
+tcl.control + s + unary,
+tcl.control + s + container > unary,
+tcl.function-call[text='expr'] + s + unary,
+tcl.function-call[text='expr'] + s + container unary,
+tcl.definition + keyword.tcl-operator,
+tcl.definition + s + keyword.tcl-operator,
+tcl.numeric + s + keyword.tcl-operator,
+tcl.numeric + keyword.tcl-operator,
+tcl.container + keyword.tcl-operator,
+tcl.container + s + keyword.tcl-operator {
+	color: #d33682;
+	font-weight: bold;
+}
+tcl.unset-var {
+	color: #e51c1c;
+	font-style: italic;
+}
+tcl.format-specifier {
+	color: #268bd2;
+}
+tcl.format-type {
+	font-weight:bold;
+}
+
+tcl.namespace,
+tcl.command-nextline,
+tcl.terminator {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group ConTeXt */
+
+balanced.bracket > support.function ~ context.punctuation.separator.comma,
+balanced.bracket + balanced.bracket > context.punctuation.separator.comma,
+balanced.bracket + balanced.bracket + balanced.bracket > context.punctuation.separator.comma,
+support.function + balanced.bracket > context.punctuation.separator.comma,
+context.key-name[text='location'] + keyword.operator.key + balanced > context.punctuation.separator.comma,
+context.key-name[text='align'] + keyword.operator.key + balanced > context.punctuation.separator.comma,
 keyword.operator,
 regex quantifier,
 regex negated,
 regex identifier.any {
-	color: #cd8376;
+	color: #d33682;
+	font-weight: bold;
 }
 keyword.operator.logical {
 	font-weight: bold;
 }
 regex container begin,
 regex container end,
-open-bracket,
-close-bracket,
 php php.begin *,
 php keyword.modifier,
 tag > attribute-with-value > string.quoted {
@@ -67,7 +148,7 @@ punctuation.definition.tag {
 }
 
 property-name {
-	color: rgba(249, 212, 123, 0.2);
+	color: rgba(38, 138, 209, 0.5);
 }
 
 tag>name,
@@ -83,14 +164,16 @@ property-value, vvariable {
 
 keyword.important,
 storage.type,
-control,
-character-class.escape {
+escape,
+escapes,
+escaped {
+	color: #996600;
+} {
 	color: #d6752b;
 	font-weight: bold;
 }
 
 comment,
-comment>punctuation,
 tag.doctype,
 tag.doctype > *,
 tag.doctype > string.quoted {
@@ -98,7 +181,6 @@ tag.doctype > string.quoted {
 }
 
 balanced,
-punctuation.comma,
 punctuation.section,
 string.quoted > punctuation {
 	color: #ffffff;
@@ -141,3 +223,19 @@ tag.h1 *,
 tag > string > punctuation {
 	font-weight: bold;
 }
+/* @end */
+
+/* @group Metafun */
+keyword.datatype.metafun {
+	color: #e8e827;
+}
+keyword.metafun {
+	color: #ee8023;
+}
+keyword.other.metafun {
+	color: #e73e09;
+}
+open-parenthesis.metafun, close-parenthesis.metafun {
+	color: #ec1919;
+}
+/* @end */
