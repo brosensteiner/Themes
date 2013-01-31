@@ -1,28 +1,32 @@
 /*
 	@theme CappuccinoMod
-	@override-placeholders ruby, css, html, php
+	@override-placeholders ruby, css, html
   	@author Bernhard Rosensteiner
 */
 
 :document-base {
-	color: #999;
-	background-color: rgba(25, 25, 25, 0.95);
+	color: hsl(0, 0%, 70%);
+	background-color: rgba(25, 25, 25, 0.98);
 	insertion-point-color: #fff;
-	selection-background-color: rgba(200, 89, 48, 0.3);
-	current-line-background-color: rgba(100, 100, 100, 0.4);
+	selection-background-color: hsl(230, 4%, 50%);
+	current-line-background-color: hsl(220, 4%, 20%);
 }
 
 shebang {
 	color: #ec1919;
-}
-punctuation.terminator,
-regex begin,
-regex end,
-regex operator {
-	color: #ffffff;
 	font-weight: bold;
 }
-control {
+
+numeric {
+        color: #7653c1;
+}
+
+punctuation.terminator {
+	color: hsl(0, 0%, 50%);
+	font-weight: bold;
+}
+
+keyword.control {
 	color: #e88313;
 	font-weight: bold;
 }
@@ -31,15 +35,25 @@ keyword.unit {
 	font-weight: bold;
 }
 keyword.other {
-	color: #ebeb60;
+	color: #5f60eb;
+	font-weight: bold;
 }
-numeric {
-        color: #7653c1;
+keyword {
+	color: #d33682;
 }
 
+operator.unary,
+operator.binary,
+operator.assignment,
+operator.comparison,
+operator.logical {
+	color: #d33682;
+	font-weight: bold;
+}
+
+storage.type,
 global {
 	color: #268bd2;
-	font-weight: bold;
 }
 open-brace, close-brace,
 open-parenthesis, close-parenthesis {
@@ -51,113 +65,7 @@ close-bracket {
 	color: #f35519;
 	font-weight: bold;
 }
-/* @group Lua */
-lua.keyword.local {
-	color: #268bd2;
-}
-lua.metamethod {
-	color: #d44950;
-}
-lua.keyword.additional.magic-character {
-	color: #86bcff;
-	font-weight: bold;
-}
 
-/* @end */
-/* @group Tcl */
-tcl.container.evaluate-array > evaluate,
-tcl.variable.punctuation {
-	color: #8BA57A;
-}
-
-tcl.argument-expansion,
-tcl.control + s + unary,
-tcl.control + s + container > unary,
-tcl.function-call[text='expr'] + s + unary,
-tcl.function-call[text='expr'] + s + container unary,
-tcl.definition + keyword.tcl-operator,
-tcl.definition + s + keyword.tcl-operator,
-tcl.numeric + s + keyword.tcl-operator,
-tcl.numeric + keyword.tcl-operator,
-tcl.container + keyword.tcl-operator,
-tcl.container + s + keyword.tcl-operator {
-	color: #d33682;
-	font-weight: bold;
-}
-tcl.unset-var {
-	color: #e51c1c;
-	font-style: italic;
-}
-tcl.format-specifier {
-	color: #268bd2;
-}
-tcl.format-type {
-	font-weight:bold;
-}
-
-tcl.namespace,
-tcl.command-nextline,
-tcl.terminator {
-	color: #ffffff;
-	font-weight: bold;
-}
-
-/* @end */
-
-/* @group ConTeXt */
-openbracket.level0,
-closebracket.level0 {
-	color: #7a7a75;
-}
-
-context.support.function.general.counting + support.function.general + keyword-zone.by-keyword,
-context.support.function.general.rule + keyword-zone.depth-width-height-keyword,
-context.support.function.general.rule + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword,
-context.support.function.general.rule + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword,
-context.keyword-zone + plus-minus-keyword,
-context.support.function.general.box + keyword-zone.to-spread-keyword > to-spread-keyword {
-	color: #9DD748;
-}
-
-context.support.variable.define {
-	color: #B10004;
-	font-weight: bold;
-}
-
-context.between.brackets > key-name {
-	color: #15A8F9;
-}
-
-
-context.structural.float {
-	background-color: #4f4f4f;
-}
-
-context.begin.math,
-context.end.math {
-	color: #800080;
-	font-weight: bold;
-}
-
-context.between.brackets > punctuation.separator.comma,
-context.support.function + balanced.bracket > context.between.brackets > punctuation.separator.comma,
-context.context.key-name[text='location'] + keyword.operator.assignment + brace > punctuation.separator.comma,
-context.context.key-name[text='align'] + keyword.operator.assignment + brace > punctuation.separator.comma,
-context.context.key-name[text='background'] + keyword.operator.assignment + brace > punctuation.separator.comma,
-keyword.operator,
-regex quantifier,
-regex negated,
-regex identifier.any {
-	color: #d33682;
-	font-weight: bold;
-}
-keyword.operator.logical {
-	font-weight: bold;
-}
-regex container begin,
-regex container end,
-php php.begin *,
-php keyword.modifier,
 tag > attribute-with-value > string.quoted {
 	color: rgba(251, 90, 90, 1.00);
 }
@@ -166,71 +74,65 @@ processing-instruction {
 	color:#aeaeae;
 }
 
-php builtin_function name,
-function > name,
-css.embedded attribute-name,
-css.embedded punctuation.definition.tag {
-	color: #F9EA99;
-	font-weight: bold;
-	font-style: italic;
-}
-
 class > name {
 	color: #f9d599;
 	font-weight: bold;
 	font-style: italic;
 }
+tag>name,
+support.function,
+function-call {
+	color: rgba(249, 212, 123, 0.8);
+}
+function > name,
+css.embedded attribute-name,
+css.embedded punctuation.definition.tag {
+	color: #F9EA99;
+	font-weight: bold;
+}
+
+variable {
+	color: hsl(96, 30%, 50%);
+}
 
 characters,
 tag,
-variable,
 attribute-name,
 punctuation.definition.tag {
 	color: #f4daa9;
 }
 
 property-name {
-	color: rgba(38, 138, 209, 0.5);
-}
-
-tag>name,
-support.function,
-function-call,
-storage.type {
-	color: rgba(249, 212, 123, 0.8);
+	color: hsl(200, 95%, 60%);
 }
 
 property-value, vvariable {
-	color: #8BA57A;
+	color: hsl(96, 19%, 56%);
 }
 
 keyword.important,
-storage.type,
 escape,
 escapes,
 escaped {
-	color: #996600;
-} {
-	color: #d6752b;
-	font-weight: bold;
+	color: hsl(39, 100%, 30%);
 }
 
 comment,
 tag.doctype,
 tag.doctype > *,
 tag.doctype > string.quoted {
-	color: #555;
+	color: hsl(0, 0%, 30%);
 }
 
 balanced,
 punctuation.section,
 string.quoted > punctuation {
-	color: #ffffff;
+	color: hsl(0, 0%, 100%);
 }
 
 string.quoted-alt {
 	bluebackground-color: #f4f9fe;
-	color: #1aa1a1;
+	color: hsl(179, 72%, 36%);
 	background-color: rgba(235,252,254,0.5);
 }
 string.quoted {
@@ -241,7 +143,7 @@ selector {
 }
 string.quoted > escape {
 	font-weight: bold;
-	color: rgb(127, 89, 48);
+	color: hsl(31, 45%, 34%);
 	background-color: rgba(251, 233, 173, 0.08);
 }
 
@@ -265,19 +167,128 @@ tag.h1 *,
 tag > string > punctuation {
 	font-weight: bold;
 }
+
+/* @group regex */
+regex begin,
+regex end,
+regex operator {
+	color: hsl(0, 0%, 100%);
+	font-weight: bold;
+}
+regex quantifier,
+regex negated,
+regex identifier.any {
+	color: hsl(330, 64%, 51%);
+	font-weight: bold;
+}
+regex container begin,
+regex container end {
+	color: hsl(0, 95%, 66%);
+}
 /* @end */
 
-/* @group Metafun */
-keyword.datatype.metafun {
-	color: #e8e827;
+/* @group Lua */
+
+lua.operator.lenght {
+	color: hsl(330, 64%, 51%);
+	font-weight: bold;
 }
-keyword.metafun {
-	color: #ee8023;
+lua.function-call.table-key,
+lua.punctuation.table-call {
+	color: hsl(0, 0%, 49%);
+	font-weight: bold;
 }
-keyword.other.metafun {
-	color: #e73e09;
+
+lua.keyword.character-class {
+ 		color: hsl(355, 61%, 55%);
 }
-open-parenthesis.metafun, close-parenthesis.metafun {
-	color: #ec1919;
+lua.delimiter.comma {
+	color: #d33682;
+	font-weight: bold;
 }
+lua.metamethod {
+	color: hsl(355, 61%, 55%);
+}
+lua.keyword.additional.magic-character {
+	color: hsl(212, 100%, 76%);
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group Tcl */
+tcl.dollar,
+tcl.container.evaluate-array > evaluate,
+tcl.variable.punctuation {
+	color: hsl(96, 80%, 80%);
+}
+
+tcl.argument-expansion,
+tcl.control + s + tcl-unary,
+tcl.control + s + container > tcl-unary,
+tcl.function-call[text='expr'] + s + tcl-unary,
+tcl.function-call[text='expr'] + s + container tcl-unary,
+tcl.definition + tcl-operator,
+tcl.definition + s + tcl-operator,
+tcl.numeric + s + tcl-operator,
+tcl.numeric + tcl-operator,
+tcl.container + tcl-operator,
+tcl.container + s + tcl-operator {
+	color: hsl(330, 64%, 51%);
+	font-weight: bold;
+}
+tcl.unset-var {
+	color: hsl(0, 79%, 50%);
+	font-style: italic;
+}
+tcl.format-specifier {
+	color: hsl(204, 69%, 48%);
+}
+tcl.format-type {
+	font-weight:bold;
+}
+
+tcl.namespace {
+	color: hsl(0, 0%, 100%);
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group ConTeXt */
+
+context.support.function.general.counting + support.function.general + keyword-zone.by-keyword,
+context.support.function.general.rule + keyword-zone.depth-width-height-keyword,
+context.support.function.general.rule + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword,
+context.support.function.general.rule + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword,
+context.keyword-zone + plus-minus-keyword,
+context.support.function.general.box + keyword-zone.to-spread-keyword > to-spread-keyword {
+	color: #9DD748;
+}
+
+context.between.brackets > key-name {
+	color: #15A8F9;
+}
+
+context.structural.float {
+	background-color: #4f4f4f;
+}
+
+context.begin.math,
+context.end.math {
+	color: #800080;
+	font-weight: bold;
+}
+
+context.between.brackets > delimiter.comma,
+context.support.function + brace > delimiter.comma,
+context.support.function + brace + brace > punctuation.delimiter.comma,
+context.support.function + brace + brace + brace > punctuation.delimiter.comma,
+context.key-name[text='location'] + assignment + brace > punctuation.delimiter.comma,
+context.key-name[text='align'] + assignment + brace > punctuation.delimiter.comma,
+context.key-name[text='background'] + assignment + brace > punctuation.delimiter.comma {
+	color: #d33682;
+	font-weight: bold;
+}
+
 /* @end */
