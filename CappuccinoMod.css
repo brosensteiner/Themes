@@ -1,19 +1,19 @@
 /*
 	@theme CappuccinoMod
-	@override-placeholders ruby, css, html
+	@override-placeholders ruby, css, html, bash
   	@author Bernhard Rosensteiner
 */
 
 :document-base {
-	color: hsl(0, 0%, 70%);
-	background-color: rgba(25, 25, 25, 0.98);
+	color: hsl(0, 0%, 75%);
+	background-color: hsla(0, 0%, 0%, 0.92);
 	insertion-point-color: #fff;
-	selection-background-color: hsl(230, 4%, 50%);
-	current-line-background-color: hsl(220, 4%, 20%);
+	selection-background-color: hsl(220, 4%, 50%);
+	current-line-background-color: hsl(0, 0%, 15%);
 }
 
 shebang {
-	color: #ec1919;
+	color: hsl(0, 84%, 51%);
 	font-weight: bold;
 }
 
@@ -27,17 +27,18 @@ punctuation.terminator {
 }
 
 keyword.control {
-	color: #e88313;
+	color: hsl(31, 84%, 49%);
 	font-weight: bold;
 }
 keyword.unit {
-	color: #d33682;
+	color: hsl(330, 64%, 51%);
 	font-weight: bold;
 }
 keyword.other {
-	color: #5f60eb;
+	color: hsl(238, 77%, 64%);
 	font-weight: bold;
 }
+keyword.important,
 keyword {
 	color: #d33682;
 }
@@ -47,42 +48,48 @@ operator.binary,
 operator.assignment,
 operator.comparison,
 operator.logical {
-	color: #d33682;
+	color: hsl(330, 64%, 51%);
 	font-weight: bold;
+}
+operator {
+	color: hsl(330, 64%, 51%);
 }
 
 storage.type,
 global {
 	color: #268bd2;
 }
-open-brace, close-brace,
-open-parenthesis, close-parenthesis {
-	color: #ffffff;
-	font-weight: bold;
-}
+delimiter.bracket,
 open-bracket,
 close-bracket {
-	color: #f35519;
+	color: hsl(16, 90%, 52%);
+	font-weight: bold;
+}
+open-brace, close-brace,
+open-parenthesis, close-parenthesis {
+	color: hsl(0, 0%, 100%);
 	font-weight: bold;
 }
 
+namespace,
 tag > attribute-with-value > string.quoted {
-	color: rgba(251, 90, 90, 1.00);
+	color: hsl(0, 95%, 66%);
 }
 
 processing-instruction {
-	color:#aeaeae;
+	color: hsl(0, 0%, 68%);
 }
 
 class > name {
-	color: #f9d599;
+	color: hsl(37, 88%, 78%);
 	font-weight: bold;
 	font-style: italic;
 }
 tag>name,
+identifier.function,
 support.function,
 function-call {
-	color: rgba(249, 212, 123, 0.8);
+	color: hsla(42, 91%, 72%, 0.8);
 }
 function > name,
 css.embedded attribute-name,
@@ -110,18 +117,18 @@ property-value, vvariable {
 	color: hsl(96, 19%, 56%);
 }
 
-keyword.important,
 escape,
 escapes,
 escaped {
 	color: hsl(39, 100%, 30%);
+	font-weight: bold;
 }
 
 comment,
 tag.doctype,
 tag.doctype > *,
 tag.doctype > string.quoted {
-	color: hsl(0, 0%, 30%);
+	color: hsl(0, 2%, 40%);
 }
 
 balanced,
@@ -136,7 +143,7 @@ string.quoted-alt {
 	background-color: rgba(235,252,254,0.5);
 }
 string.quoted {
-	color: #a37720;
+	color: hsl(33, 42%, 25%);
 }
 selector {
 	color: rgb(127, 89, 48);
@@ -148,17 +155,17 @@ string.quoted > escape {
 }
 
 js.embedded {
-	color: #434343;
+	color: hsl(0, 0%, 26%);
 }
 
 constant.numeric, constant.language {
-	color: #ffffff;
+	color: hsl(0, 0%, 100%);
 	background-color: #555;
 }
 
 invalid {
-	background-color: #f93232;
-	color: #f9f2ce;
+	background-color: hsl(0, 94%, 58%);
+	color: hsl(50, 78%, 89%);
 }
 
 textile > header,
@@ -169,12 +176,7 @@ tag > string > punctuation {
 }
 
 /* @group regex */
-regex begin,
-regex end,
-regex operator {
-	color: hsl(0, 0%, 100%);
-	font-weight: bold;
-}
+
 regex quantifier,
 regex negated,
 regex identifier.any {
@@ -185,6 +187,15 @@ regex container begin,
 regex container end {
 	color: hsl(0, 95%, 66%);
 }
+regex operator {
+	color: hsl(0, 0%, 100%);
+	font-weight: bold;
+}
+
+regex character-class {
+	color: hsl(84, 64%, 30%);
+}
+
 /* @end */
 
 /* @group Lua */
@@ -202,16 +213,15 @@ lua.punctuation.table-call {
 lua.keyword.character-class {
  		color: hsl(355, 61%, 55%);
 }
-lua.delimiter.comma {
-	color: #d33682;
-	font-weight: bold;
+lua.table.separator {
+	color: hsl(39, 30%, 38%);
 }
 lua.metamethod {
 	color: hsl(355, 61%, 55%);
 }
-lua.keyword.additional.magic-character {
-	color: hsl(212, 100%, 76%);
-	font-weight: bold;
+lua.container > delimiter.comma,
+lua.function-argument > delimiter.comma {
+	color: hsl(0, 94%, 58%);
 }
 
 /* @end */
@@ -256,38 +266,43 @@ tcl.namespace {
 /* @end */
 
 /* @group ConTeXt */
-
+context.unprotect,
 context.support.function.general.counting + support.function.general + keyword-zone.by-keyword,
 context.support.function.general.rule + keyword-zone.depth-width-height-keyword,
 context.support.function.general.rule + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword,
 context.support.function.general.rule + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword,
 context.keyword-zone + plus-minus-keyword,
 context.support.function.general.box + keyword-zone.to-spread-keyword > to-spread-keyword {
-	color: #9DD748;
+	color: hsl(84, 64%, 56%);
 }
 
 context.between.brackets > key-name {
-	color: #15A8F9;
+	color: hsl(200, 95%, 52%);
 }
 
-context.structural.float {
-	background-color: #4f4f4f;
+context.section,
+context.function.place-complete,
+context.table.cell,
+context.table.row {
+	font-weight: bold;
+	background-color: hsl(0, 0%, 50%);
 }
-
 context.begin.math,
 context.end.math {
-	color: #800080;
+	color: hsl(299, 100%, 25%);
 	font-weight: bold;
 }
 
 context.between.brackets > delimiter.comma,
 context.support.function + brace > delimiter.comma,
-context.support.function + brace + brace > punctuation.delimiter.comma,
-context.support.function + brace + brace + brace > punctuation.delimiter.comma,
-context.key-name[text='location'] + assignment + brace > punctuation.delimiter.comma,
-context.key-name[text='align'] + assignment + brace > punctuation.delimiter.comma,
-context.key-name[text='background'] + assignment + brace > punctuation.delimiter.comma {
-	color: #d33682;
+context.support.function + brace + brace > delimiter.comma,
+context.support.function + brace + brace + brace > delimiter.comma,
+context.key-name[text='location'] + assignment + brace > delimiter.comma,
+context.key-name[text='align'] + assignment + brace > delimiter.comma,
+context.key-name[text='background'] + assignment + brace > delimiter.comma,
+
+context.balanced.bracket:has-child(function[text='\\definecolorgroup']) + bracket colon {
+	color: hsl(330, 64%, 51%);
 	font-weight: bold;
 }
 
