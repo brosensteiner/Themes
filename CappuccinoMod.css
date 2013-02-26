@@ -15,32 +15,24 @@
 shebang {
 	color: hsl(0, 84%, 51%);
 	font-weight: bold;
-}
-
-numeric {
-        color: #7653c1;
-}
-
-punctuation.terminator {
-	color: hsl(0, 0%, 50%);
-	font-weight: bold;
+	background-color: #555;
 }
 
 keyword.control {
-	color: hsl(31, 84%, 49%);
+	color: hsl(31, 84%, 50%);
 	font-weight: bold;
 }
 keyword.unit {
-	color: hsl(330, 64%, 51%);
+	color: hsl(31, 84%, 40%);
 	font-weight: bold;
 }
-keyword.other {
-	color: hsl(238, 77%, 64%);
+keyword.important {
+	color: hsl(238, 77%, 60%);
 	font-weight: bold;
 }
-keyword.important,
+keyword.other,
 keyword {
-	color: #d33682;
+	color: hsl(238, 77%, 64%);
 }
 
 operator.unary,
@@ -54,18 +46,28 @@ operator.logical {
 operator {
 	color: hsl(330, 64%, 51%);
 }
-
+selector,
 storage.type,
 global {
-	color: #268bd2;
+	color: hsl(204, 85%, 31%);
+}
+global {
+	font-weight: bold;
 }
 delimiter.bracket,
-open-bracket,
-close-bracket {
+open-bracket, close-bracket,
+open.brace.square, close.brace.square,
+open.bracket, close.bracket {
 	color: hsl(16, 90%, 52%);
 	font-weight: bold;
 }
+punctuation.period,
+punctuation.terminator,
+punctuation.backslash,
+property-list > punctuation.begin, property-list > punctuation.end,
 open-brace, close-brace,
+open.brace.round, close.brace.round,
+open.brace.curly, close.brace.curly,
 open-parenthesis, close-parenthesis {
 	color: hsl(0, 0%, 100%);
 	font-weight: bold;
@@ -83,7 +85,6 @@ processing-instruction {
 class > name {
 	color: hsl(37, 88%, 78%);
 	font-weight: bold;
-	font-style: italic;
 }
 tag>name,
 identifier.function,
@@ -91,11 +92,24 @@ support.function,
 function-call {
 	color: hsla(42, 91%, 72%, 0.8);
 }
+
 function > name,
 css.embedded attribute-name,
 css.embedded punctuation.definition.tag {
 	color: #F9EA99;
 	font-weight: bold;
+}
+css > comma {
+	color: hsl(0, 94%, 58%);
+}
+property-value,
+vvariable,
+method {
+	color: hsl(96, 19%, 56%);
+}
+property,
+property-name {
+	color: hsl(200, 95%, 60%);
 }
 
 variable {
@@ -109,21 +123,6 @@ punctuation.definition.tag {
 	color: #f4daa9;
 }
 
-property-name {
-	color: hsl(200, 95%, 60%);
-}
-
-property-value, vvariable {
-	color: hsl(96, 19%, 56%);
-}
-
-escape,
-escapes,
-escaped {
-	color: hsl(39, 100%, 30%);
-	font-weight: bold;
-}
-
 comment,
 tag.doctype,
 tag.doctype > *,
@@ -131,39 +130,40 @@ tag.doctype > string.quoted {
 	color: hsl(0, 2%, 40%);
 }
 
-balanced,
 punctuation.section,
 string.quoted > punctuation {
 	color: hsl(0, 0%, 100%);
 }
-
 string.quoted-alt {
 	bluebackground-color: #f4f9fe;
 	color: hsl(179, 72%, 36%);
-	background-color: rgba(235,252,254,0.5);
 }
+escape,
+escapes,
+escaped,
 string.quoted {
 	color: hsl(33, 42%, 25%);
 }
-selector {
-	color: rgb(127, 89, 48);
-}
-string.quoted > escape {
+
+escape,
+escapes,
+escaped {
 	font-weight: bold;
-	color: hsl(31, 45%, 34%);
-	background-color: rgba(251, 233, 173, 0.08);
 }
 
 js.embedded {
 	color: hsl(0, 0%, 26%);
 }
 
-constant.numeric, constant.language {
+
+numeric,
+constant.language {
 	color: hsl(0, 0%, 100%);
 	background-color: #555;
 }
 
-invalid {
+invalid,
+comment.task {
 	background-color: hsl(0, 94%, 58%);
 	color: hsl(50, 78%, 89%);
 }
@@ -216,9 +216,6 @@ lua.keyword.character-class {
 lua.table.separator {
 	color: hsl(39, 30%, 38%);
 }
-lua.metamethod {
-	color: hsl(355, 61%, 55%);
-}
 lua.container > delimiter.comma,
 lua.function-argument > delimiter.comma {
 	color: hsl(0, 94%, 58%);
@@ -230,7 +227,7 @@ lua.function-argument > delimiter.comma {
 tcl.dollar,
 tcl.container.evaluate-array > evaluate,
 tcl.variable.punctuation {
-	color: hsl(96, 80%, 80%);
+	font-weight:bold;
 }
 
 tcl.argument-expansion,
@@ -266,15 +263,6 @@ tcl.namespace {
 /* @end */
 
 /* @group ConTeXt */
-context.unprotect,
-context.support.function.general.counting + support.function.general + keyword-zone.by-keyword,
-context.support.function.general.rule + keyword-zone.depth-width-height-keyword,
-context.support.function.general.rule + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword,
-context.support.function.general.rule + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword + keyword-zone.unit + keyword-zone.depth-width-height-keyword,
-context.keyword-zone + plus-minus-keyword,
-context.support.function.general.box + keyword-zone.to-spread-keyword > to-spread-keyword {
-	color: hsl(84, 64%, 56%);
-}
 
 context.between.brackets > key-name {
 	color: hsl(200, 95%, 52%);
@@ -287,23 +275,40 @@ context.table.row {
 	font-weight: bold;
 	background-color: hsl(0, 0%, 50%);
 }
-context.begin.math,
-context.end.math {
-	color: hsl(299, 100%, 25%);
-	font-weight: bold;
-}
 
-context.between.brackets > delimiter.comma,
-context.support.function + brace > delimiter.comma,
-context.support.function + brace + brace > delimiter.comma,
-context.support.function + brace + brace + brace > delimiter.comma,
-context.key-name[text='location'] + assignment + brace > delimiter.comma,
-context.key-name[text='align'] + assignment + brace > delimiter.comma,
-context.key-name[text='background'] + assignment + brace > delimiter.comma,
-
+context.between.brackets > comma,
+context.support.function + brace > comma,
+context.support.function + brace + brace > comma,
+context.support.function + brace + brace + brace > comma,
+context.key-name[text='location'] + assignment + brace > comma,
+context.key-name[text='align'] + assignment + brace > comma,
+context.key-name[text='background'] + assignment + brace > comma,
 context.balanced.bracket:has-child(function[text='\\definecolorgroup']) + bracket colon {
 	color: hsl(330, 64%, 51%);
 	font-weight: bold;
 }
 
+tex.begin.math,
+tex.end.math {
+	color: hsl(299, 100%, 25%);
+	font-weight: bold;
+}
+/* @end */
+
+/* @group MetaFun */
+
+metafun.balanced.parentheses_and_braces > comma {
+	color: hsl(0, 94%, 58%);
+}
+
+/* @end */
+
+/* @group TeX */
+tex.begin,
+tex.end {
+	color: hsl(16, 90%, 52%);
+}
+tex.command {
+	color: hsl(37, 89%, 79%);
+}
 /* @end */
