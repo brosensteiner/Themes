@@ -176,7 +176,11 @@ tag > string > punctuation {
 }
 
 /* @group regex */
-
+regex group.anonymous.begin,
+regex group.anonymous.end {
+	color: hsl(0, 95%, 80%);
+	font-weight: bold;
+}
 regex quantifier,
 regex negated,
 regex identifier.any {
@@ -195,7 +199,6 @@ regex operator {
 regex character-class {
 	color: hsl(84, 64%, 30%);
 }
-
 /* @end */
 
 /* @group Lua */
