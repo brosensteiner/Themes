@@ -5,8 +5,8 @@
 */
 
 :document-base {
-	color: hsl(0, 0%, 75%);
-	background-color: hsla(0, 0%, 0%, 0.92);
+	color: hsl(0, 2%, 78%);
+	background-color: hsla(35, 10%, 12%, 0.99);
 	insertion-point-color: #fff;
 	selection-background-color: hsl(220, 4%, 50%);
 	current-line-background-color: hsl(0, 0%, 15%);
@@ -54,6 +54,9 @@ global {
 global {
 	font-weight: bold;
 }
+
+property-list.block > punctuation.begin,
+property-list.block > punctuation.end,
 delimiter.bracket,
 open-bracket, close-bracket,
 open.brace.square, close.brace.square,
@@ -61,7 +64,14 @@ open.bracket, close.bracket {
 	color: hsl(16, 90%, 52%);
 	font-weight: bold;
 }
+
+css > comma {
+	color: hsl(16, 90%, 52%);
+}
+
+property-value > separator,
 punctuation.period,
+punctuation.colon,
 punctuation.terminator,
 punctuation.backslash,
 property-list > punctuation.begin, property-list > punctuation.end,
@@ -82,26 +92,21 @@ processing-instruction {
 	color: hsl(0, 0%, 68%);
 }
 
-class > name {
-	color: hsl(37, 88%, 78%);
-	font-weight: bold;
-}
-tag>name,
+tag > name,
 identifier.function,
 support.function,
 function-call {
 	color: hsla(42, 91%, 72%, 0.8);
 }
 
+class > name,
 function > name,
 css.embedded attribute-name,
 css.embedded punctuation.definition.tag {
-	color: #F9EA99;
+	color: hsl(40, 80%, 78%);
 	font-weight: bold;
 }
-css > comma {
-	color: hsl(0, 94%, 58%);
-}
+
 property-value,
 vvariable,
 method {
@@ -128,6 +133,7 @@ tag.doctype,
 tag.doctype > *,
 tag.doctype > string.quoted {
 	color: hsl(0, 2%, 40%);
+	font-weight: bold;
 }
 
 punctuation.section,
@@ -138,13 +144,13 @@ string.quoted-alt {
 	bluebackground-color: #f4f9fe;
 	color: hsl(179, 72%, 36%);
 }
+
 escape,
 escapes,
 escaped,
 string.quoted {
-	color: hsl(33, 42%, 25%);
+	color: hsl(35, 30%, 40%);
 }
-
 escape,
 escapes,
 escaped {
@@ -176,28 +182,35 @@ tag > string > punctuation {
 }
 
 /* @group regex */
-regex group.anonymous.begin,
-regex group.anonymous.end {
-	color: hsl(0, 95%, 80%);
-	font-weight: bold;
-}
-regex quantifier,
-regex negated,
-regex identifier.any {
+regex constant.shorthand {
 	color: hsl(330, 64%, 51%);
-	font-weight: bold;
 }
-regex container begin,
-regex container end {
-	color: hsl(0, 95%, 66%);
+regex constant.character {
+	color: hsl(35, 30%, 40%);
 }
-regex operator {
+regex literals.sequence {
+	color: hsl(330, 80%, 51%);
+}
+regex punctuation {
 	color: hsl(0, 0%, 100%);
 	font-weight: bold;
 }
-
-regex character-class {
-	color: hsl(84, 64%, 30%);
+regex group.noncapturing > punctuation.definition.begin,
+regex group.noncapturing > punctuation.definition.end {
+	color: hsl(0, 100%, 80%);
+}
+regex group > punctuation.definition.begin,
+regex group > punctuation.definition.end {
+	color: hsl(0, 50%, 80%);
+}
+regex operator,
+regex character-class > punctuation.definition.begin,
+regex character-class > punctuation.definition.end {
+	color: hsl(0, 100%, 30%);
+	font-weight: bold;
+}
+regex character-class constant, regex character-class operator, regex character-class punctuation {
+	font-weight: normal;
 }
 /* @end */
 
@@ -238,8 +251,9 @@ tcl.control + s + tcl-unary,
 tcl.control + s + container > tcl-unary,
 tcl.function-call[text='expr'] + s + tcl-unary,
 tcl.function-call[text='expr'] + s + container tcl-unary,
-tcl.definition + tcl-operator,
-tcl.definition + s + tcl-operator,
+tcl.mathop + tcl-operator,
+tcl.subst + tcl-operator,
+tcl.subst + s + tcl-operator,
 tcl.numeric + s + tcl-operator,
 tcl.numeric + tcl-operator,
 tcl.container + tcl-operator,
