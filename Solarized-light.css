@@ -1,37 +1,37 @@
 /*
 	@theme CappuccinoMod
-	@override-placeholders ruby, html, css, html, bash, python, lua, context, tex, regex
+	@override-placeholders ruby, html, css, html, bash, regex
   	@author Bernhard Rosensteiner
 */
 
 :document-base {
-	color: hsl(0, 2%, 78%);
-	background-color: hsla(35, 10%, 12%, 0.99);
-	insertion-point-color: #fff;
-	selection-background-color: hsl(220, 4%, 50%);
-	current-line-background-color: hsl(0, 0%, 15%);
+	color: #586e75;
+	background-color: #fdf6e3;
+	insertion-point-color: #002b36;
+	selection-background-color: #93a1a1;
+	current-line-background-color:  #eee8d5;
 }
 
 shebang {
-	color: hsl(0, 84%, 51%);
+	color: #073642;
+	font-weight: bold;
 	background-color: #555;
 }
 
 keyword.control {
-	color: hsl(31, 84%, 50%);
+	color: #859900;
 	font-weight: bold;
 }
 keyword.unit {
-	color: hsl(31, 84%, 40%);
-	font-weight: bold;
+	color: #859900;
 }
 keyword.important {
-	color: hsl(238, 77%, 60%);
+	color: #859900;
 	font-weight: bold;
 }
 keyword.other,
 keyword {
-	color: hsl(238, 77%, 64%);
+	color: #859900;
 }
 
 operator.unary,
@@ -39,16 +39,16 @@ operator.binary,
 operator.assignment,
 operator.comparison,
 operator.logical {
-	color: hsl(330, 64%, 51%);
+	color: #cb4b16;
 	font-weight: bold;
 }
 operator {
-	color: hsl(330, 64%, 51%);
+	color: #cb4b16;
 }
 selector,
 storage.type,
 global {
-	color: hsl(204, 85%, 31%);
+	color: #cb4b16;
 }
 global {
 	font-weight: bold;
@@ -60,12 +60,12 @@ delimiter.bracket,
 open-bracket, close-bracket,
 open.brace.square, close.brace.square,
 open.bracket, close.bracket {
-	color: hsl(16, 90%, 52%);
+	color: #586e75;
 	font-weight: bold;
 }
 
 css > comma {
-	color: hsl(16, 90%, 52%);
+	color: #586e75;
 }
 
 property-value > separator,
@@ -78,77 +78,76 @@ open-brace, close-brace,
 open.brace.round, close.brace.round,
 open.brace.curly, close.brace.curly,
 open-parenthesis, close-parenthesis {
-	color: hsl(0, 0%, 100%);
+	color: #586e75;
 	font-weight: bold;
 }
 
 namespace,
 tag > attribute-with-value > string.quoted {
-	color: hsl(0, 95%, 66%);
+	color: #859900;
 }
 
 processing-instruction {
-	color: hsl(0, 0%, 68%);
+	color: #586e75;
 }
 
 tag > name,
 identifier.function,
 support.function,
 function-call {
-	color: hsla(42, 91%, 72%, 0.8);
+	color: #cb4b16;
 }
 
 class > name,
 function > name,
 css.embedded attribute-name,
 css.embedded punctuation.definition.tag {
-	color: hsl(40, 80%, 78%);
+	color: #268bd2;
 	font-weight: bold;
 }
 
 property-value,
 vvariable,
 method {
-	color: hsl(117, 30%, 40%);
+	color: #586e75;
 }
 property,
 property-name {
-	color: hsl(200, 95%, 60%);
+	color: #268bd2;
 }
 
 variable {
-	color: hsl(117, 48%, 53%);
+	color: #586e75;
 }
 
 characters,
 tag,
 attribute-name,
 punctuation.definition.tag {
-	color: #f4daa9;
+	color: #586e75;
 }
 
 comment,
 tag.doctype,
 tag.doctype > *,
 tag.doctype > string.quoted {
-	color: hsl(0, 2%, 40%);
-	font-weight: bold;
+	color: #93a1a1;
 }
 
 punctuation.section,
 string.quoted > punctuation {
-	color: hsl(0, 0%, 100%);
+	color: #dc322f;
 }
 string.quoted-alt {
 	bluebackground-color: #f4f9fe;
-	color: hsl(179, 72%, 36%);
+	color: #dc322f;
 }
 
 escape,
 escapes,
 escaped,
 string.quoted {
-	color: hsl(35, 30%, 40%);
+	color: #2aa198;
 }
 escape,
 escapes,
@@ -157,20 +156,19 @@ escaped {
 }
 
 js.embedded {
-	color: hsl(0, 0%, 26%);
+	color: #586e75;
 }
 
 
 numeric,
 constant.language {
-	color: hsl(0, 0%, 100%);
-	background-color: #555;
+	color: #b58900;
 }
 
 invalid,
 comment.task {
 	background-color: hsl(0, 94%, 58%);
-	color: hsl(50, 78%, 89%);
+	color: #586e75;
 }
 
 textile > header,
@@ -208,7 +206,7 @@ regex group > punctuation.definition.end {
 regex operator,
 regex character-class > punctuation.definition.begin,
 regex character-class > punctuation.definition.end {
-	color: hsl(0, 100%, 30%);
+	color: #cb4b16;
 	font-weight: bold;
 }
 regex constant.character, regex character-class constant, regex character-class operator, regex character-class punctuation {
@@ -219,7 +217,7 @@ regex constant.character, regex character-class constant, regex character-class 
 /* @group Lua */
 
 lua.operator.lenght {
-	color: hsl(330, 64%, 51%);
+	color: #cb4b16;
 	font-weight: bold;
 }
 lua.function-call.table-key,
@@ -232,11 +230,11 @@ lua.keyword.character-class {
  		color: hsl(355, 61%, 55%);
 }
 lua.table.separator {
-	color: hsl(39, 30%, 38%);
+	color: #dc322f;
 }
 lua.container > delimiter.comma,
 lua.function-argument > delimiter.comma {
-	color: hsl(0, 94%, 58%);
+	color: #d33682;
 }
 
 /* @end */
@@ -260,7 +258,7 @@ tcl.numeric + s + tcl-operator,
 tcl.numeric + tcl-operator,
 tcl.container + tcl-operator,
 tcl.container + s + tcl-operator {
-	color: hsl(330, 64%, 51%);
+	color: #cb4b16;
 	font-weight: bold;
 }
 tcl.unset-var {
@@ -284,7 +282,7 @@ tcl.namespace {
 /* @group ConTeXt */
 
 context.between.brackets > key-name {
-	color: hsl(200, 95%, 52%);
+	color: #268bd2;
 }
 
 context.section,
@@ -292,7 +290,7 @@ context.function.place-complete,
 context.table.cell,
 context.table.row {
 	font-weight: bold;
-	background-color: hsl(0, 0%, 50%);
+	background-color: hsl(0, 0%, 90%);
 }
 
 context.between.brackets > comma,
@@ -303,13 +301,13 @@ context.key-name[text='location'] + assignment + brace > comma,
 context.key-name[text='align'] + assignment + brace > comma,
 context.key-name[text='background'] + assignment + brace > comma,
 context.balanced.bracket:has-child(function[text='\\definecolorgroup']) + bracket colon {
-	color: hsl(330, 64%, 51%);
+	color: #d33682;
 	font-weight: bold;
 }
 
 tex.begin.math,
 tex.end.math {
-	color: hsl(299, 100%, 25%);
+	color: #6c71c4;
 	font-weight: bold;
 }
 /* @end */
@@ -317,7 +315,7 @@ tex.end.math {
 /* @group MetaFun */
 
 metafun.balanced.parentheses_and_braces > comma {
-	color: hsl(0, 94%, 58%);
+	color: #dc322f;
 }
 
 /* @end */
@@ -325,9 +323,9 @@ metafun.balanced.parentheses_and_braces > comma {
 /* @group TeX */
 tex.begin,
 tex.end {
-	color: hsl(16, 90%, 52%);
+	color: #dc322f;
 }
 tex.command {
-	color: hsl(37, 89%, 79%);
+	color: #dc322f;
 }
 /* @end */
