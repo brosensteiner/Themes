@@ -5,12 +5,12 @@
 */
 
 :document-base {
-	color: #586E75;
-	background-color: #fdf6e3;
-	insertion-point-color: #002b36;
+	color: #657B83;
+	background-color: #073642;
+	insertion-point-color: #FDF6E3;
 	insertion-point-width: 2px;
-	selection-background-color: rgba(0, 0, 0, .2);
-	current-line-background-color:  rgba(0, 0, 0, .06);
+	selection-background-color: #EEE8D5;
+	current-line-background-color:  rgba(1, 1, 1, .24);
 }
 
 
@@ -19,8 +19,8 @@
 }
 
 shebang {
-	color: #FDF6E3;
-	background-color: #93a1a1;
+	color: #657B83;
+	background-color: #EEE8D5;
 }
 
 modifier,
@@ -75,7 +75,7 @@ open.brace.square, close.brace.square,
 open.brace.curly, close.brace.curly,
 open-bracket, close-bracket,
 open.bracket, close.bracket {
-	color: #073642;
+	color: #93A1A1;
 	font-weight: bold;
 }
 
@@ -88,7 +88,7 @@ property-list > punctuation,
 open-brace, close-brace,
 open.brace.round, close.brace.round,
 open-parenthesis, close-parenthesis {
-	color: #002B36;
+	color: #93A1A1;
 }
 
 textile > header,
@@ -101,7 +101,7 @@ punctuation.terminator, {
 }
 
 processing-instruction {
-	color: #586e75;
+	color: #657B83;
 }
 
 pseudo-class,
@@ -132,22 +132,23 @@ property {
 	color: #D33682;
 }
 
+selector,
 variable,
 vvariable {
-	color: #586e75;
+	color: #657B83;
 }
 
 characters,
 tag,
 attribute-name,
 punctuation.definition.tag {
-	color: #586e75;
+	color: #657B83;
 }
 
 comment,
 tag.doctype,
 tag.doctype > * {
-	color: rgba(0, 0, 0, .25);
+	color: rgba(1, 1, 1, .6);
 }
 
 string.quoted {
@@ -155,7 +156,7 @@ string.quoted {
 }
 
 js.embedded {
-	color: #586e75;
+	color: #657B83;
 }
 
 misc,
@@ -168,7 +169,7 @@ constant.language {
 invalid,
 comment.task {
 	background-color: #dc322f;
-	color: #586e75;
+	color: #657B83;
 }
 
 /* @group regex */
@@ -214,11 +215,11 @@ python string > format {
 	color:#268BD2;
 }
 python function.definition > punctuation {
-	color:#002B36;
+	color:#93A1A1;
 	font-weight:bold;
 }
 python meta.decorator,
-python keyword[text='import']  {
+python keyword[text='import'] {
 	color:#CB4B16;
 }
 /* @end */
